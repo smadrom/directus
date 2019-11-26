@@ -167,7 +167,7 @@ class Settings extends Route
         $inputData = $request->getParsedBody();
         foreach ($fieldData['data'] as $key => $value) {
             if ($value['field'] === $setting) {
-                if ($inputData['value'] !== null) {
+                if ($inputData['value'] !== null && $inputData['value'] !== '') {
                     switch ($value['type']) {
                         case 'file':
                             $inputData['value'] = isset($inputData['value']['id']) ? $inputData['value']['id'] : $inputData['value'];
